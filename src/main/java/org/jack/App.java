@@ -4,6 +4,7 @@ package org.jack;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cache.ehcache.internal.EhcacheRegionFactory;
 
 import java.util.function.DoubleToIntFunction;
 
@@ -19,6 +20,7 @@ public class App
 
         Session session=factory.openSession();
         Transaction tx= session.beginTransaction();
+
 
         session.save(st);
         tx.commit();

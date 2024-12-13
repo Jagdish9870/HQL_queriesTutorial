@@ -37,6 +37,9 @@ public class HibernateUtil {
         properties.put(Environment.DIALECT,"org.hibernate.dialect.MySQL8Dialect");
         properties.put(Environment.HBM2DDL_AUTO,"update");
         properties.put(Environment.SHOW_SQL,true);
+        // cache configuration
+        properties.put(Environment.USE_SECOND_LEVEL_CACHE,true);
+        properties.put(Environment.CACHE_REGION_FACTORY,"org.hibernate.cache.ehcache.internal.EhcacheRegionFactory");
         return properties;
     }
 

@@ -31,6 +31,19 @@ public class Main {
             System.out.println(s);
         }
 
+
+        // second level cache example- means it will not fetch data again from database if exist in  cache pool so increase performance of application.
+        Session session2= factory.openSession();
+      Student s1= session2.get(Student.class,1);
+        System.out.println(s1);
+        session2.close();
+
+
+        Session session3= factory.openSession();
+        Student s2= session3.get(Student.class,1);
+        System.out.println(s2);
+
+        session3.close();
         session.close();
         factory.close();
 
